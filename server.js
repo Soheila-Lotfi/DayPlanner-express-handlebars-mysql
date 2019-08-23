@@ -41,6 +41,20 @@ app.get("/", function(req, res) {
   });
 });
 
+app.post("/api/plans", function(req, res) {
+  connection.query(
+    "INSERT INTO plans (plan) VALUES (?)",
+    [req.body.plan],
+    function(err, result) {
+      if (err) {
+        return res.status(500).end();
+      }
+      res.json({ id: result.insertId });
+      console.log({ id: result.insertId });
+    }
+  );
+});
+
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Log (server-side) when our server has started
