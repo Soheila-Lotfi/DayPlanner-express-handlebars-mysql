@@ -62,4 +62,15 @@
             location.reload();
         })
     })
+
+    //update plan
+
+    $("#updateplan").on("submit", function (event) {
+        event.preventDefault();
+        $.ajax("/api/plans/" + id, { type: "PUT", data: newData }, function () {
+
+            location.reload();
+        })
+
+    })
 </script>
