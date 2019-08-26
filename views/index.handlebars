@@ -5,7 +5,7 @@
     <li>
         <p>
             {{this.id}}. {{this.plan}}
-            <button type="button">Delete Plan!</button>
+            <button data-planid="{{this.id}}" class="delbutton" type="button">Delete Plan!</button>
         </p>
 
     </li>
@@ -19,10 +19,12 @@
     <button type="submit">Save Plan</button>
 </form>
 
-{{!-- <h1>Update a plan</h1>
+<h1>Update a plan</h1>
 <select name="">
-    <option>{{plan}}</option>
-</select> --}}
+    {{#each plans}}
+    <option value="{{this.id}}">{{this.plan}}</option>
+    {{/each}}
+</select>
 <script>
     $("#createplan").on("submit", function (event) {
 
@@ -42,4 +44,17 @@
 
 
     });
+
+    //delete the plans
+
+    $(".delbutton").on("click", function (event) {
+        event.preventDefault();
+        var id = $(."delbutton").data("planid");  // attr(data-planid) is equal to data("planid")
+        $.ajax("/api/plans/" + id, {
+            type: "DELETE"
+        }).then(function () {
+
+            location.reload();
+        })
+    })
 </script>
