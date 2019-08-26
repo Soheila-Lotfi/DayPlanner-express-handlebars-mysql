@@ -55,6 +55,20 @@ app.post("/api/plans", function(req, res) {
   );
 });
 
+app.delete("/api/plans/:id", function(req, res) {
+  connection.query("DELETE FROM plans WHERE id=?", [req.params.id], function(
+    err,
+    result
+  ) {
+    if (err) {
+      return res.status(500).end();
+    } else if (result.affectedRows === 0) {
+      return res.status(404).end();
+    }
+    return res.status(200).end();
+  });
+});
+
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Log (server-side) when our server has started

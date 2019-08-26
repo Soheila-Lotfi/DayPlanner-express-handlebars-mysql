@@ -49,11 +49,11 @@
 
     $(".delbutton").on("click", function (event) {
         event.preventDefault();
-        var id = $(."delbutton").data("planid");  // attr(data-planid) is equal to data("planid")
+        var id = $(this).data("planid");  // attr(data-planid) is equal to data("planid")
         $.ajax("/api/plans/" + id, {
             type: "DELETE"
         }).then(function () {
-
+            console.log("deleted id", id);
             location.reload();
         })
     })
