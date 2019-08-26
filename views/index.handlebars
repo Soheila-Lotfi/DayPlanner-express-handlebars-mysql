@@ -67,6 +67,10 @@
 
     $("#updateplan").on("submit", function (event) {
         event.preventDefault();
+        var id = $("[name=id]").val().trim();
+        var newData = {
+            plan: $("#updateplan [name=plan]").val().trim()
+        }
         $.ajax("/api/plans/" + id, { type: "PUT", data: newData }, function () {
 
             location.reload();

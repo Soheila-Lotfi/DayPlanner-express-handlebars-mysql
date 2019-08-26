@@ -69,6 +69,23 @@ app.delete("/api/plans/:id", function(req, res) {
   });
 });
 
+app.put("/ap/plans/:id", function(req, res) {
+  connection
+    .query("UPDATE plans SET ?", [
+      {
+        plan: req.body.plan
+      }
+    ])
+    .then(function(err, result) {
+      if (err) {
+        return res.status(500).end();
+      } else if (result.affectedRows === 0) {
+        return res.status(404).end();
+      }
+      return res.status(200).end();
+    });
+});
+
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Log (server-side) when our server has started
