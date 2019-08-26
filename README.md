@@ -8,7 +8,7 @@ Soheila Lotfi
 
   * Create a full-stack application with Express, MySQL and Handlebars.
 
-     * Create a `schema.sql` file. Inside of that file, do the following:
+  * Create a `schema.sql` file. Inside of that file, do the following:
 
     1. Make a database called day_planner_db
 
