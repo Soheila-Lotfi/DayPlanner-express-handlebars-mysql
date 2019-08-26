@@ -20,11 +20,16 @@
 </form>
 
 <h1>Update a plan</h1>
-<select name="">
-    {{#each plans}}
-    <option value="{{this.id}}">{{this.plan}}</option>
-    {{/each}}
-</select>
+<form id="updateplan">
+    <select name="id">
+        {{#each plans}}
+        <option value="{{this.id}}">{{this.plan}}</option>
+        {{/each}}
+    </select>
+    <textarea type="text" name="plan"></textarea>
+    <button type="submit">Update Plan!</button>
+</form>
+
 <script>
     $("#createplan").on("submit", function (event) {
 
