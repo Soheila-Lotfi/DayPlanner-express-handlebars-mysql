@@ -71,10 +71,10 @@
         var newData = {
             plan: $("#updateplan [name=plan]").val().trim()
         }
-        $.ajax("/api/plans/" + id, { type: "PUT", data: newData }, function () {
+        $.ajax("/api/plans/" + id, { type: "PUT", data: newData }).then(function () {
 
             location.reload();
-        })
+        });
 
-    })
+    });
 </script>
