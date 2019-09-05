@@ -4,6 +4,10 @@ By:
 
 Soheila Lotfi
 
+## Overview
+
+You can create, add, and delete plans using day planner app.
+
 * **Instructions**
 
   * Create a full-stack application with Express, MySQL and Handlebars.
@@ -27,3 +31,6 @@ Soheila Lotfi
     * Additionally, show the form that the user can use to add a plan to be done.  When the submit button is clicked, the code will post to the `'/api/plans'` route, which will insert the plan from the form into the plans table and return the ID of the new plan.
 
     * Have another form that will update a plan in the plans table using PUT method.
+    
+    
+    
