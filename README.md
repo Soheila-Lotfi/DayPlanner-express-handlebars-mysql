@@ -32,5 +32,7 @@ You can create, add, and delete plans using day planner app.
 
     * Have another form that will update a plan in the plans table using PUT method.
     
+   ![image](https://user-images.githubusercontent.com/49765334/64377273-13a61000-cff8-11e9-97e3-5a7152aad6d9.png)
+    
     
     
